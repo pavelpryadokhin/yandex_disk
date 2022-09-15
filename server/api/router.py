@@ -16,12 +16,6 @@ from .schemas.response import HTTP_400_RESPONSE, HTTP_404_RESPONSE
 router = APIRouter()
 
 
-@router.get('/test', name='test', tags=['тест. роут'])
-def get_test() -> Dict[str, str]:
-    """Тестовый метод для проверки запуска приложения"""
-    return {'status': 'ok'}
-
-
 @router.post('/imports', name='Импортирует элементы файловой системы',
              status_code=200, tags=['Базовые задачи'])
 def import_items(items: SystemItemImportRequest, session: Session = Depends(
