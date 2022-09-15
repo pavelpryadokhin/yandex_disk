@@ -9,8 +9,8 @@ services:
       dockerfile: Dockerfile
       args:
         DEBUG: False
-        PROJECT_NAME: Backend School
-        SERVER_NAME: Your Server Name
+        PROJECT_NAME: 'Backend School'
+        SERVER_NAME: 'Your Server Name'
 
         POSTGRES_HOST: database_host
         POSTGRES_DB: backend
