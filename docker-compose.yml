@@ -12,7 +12,7 @@ services:
         PROJECT_NAME: "Backend School"
         SERVER_NAME: Your Server Name
 
-        POSTGRES_HOST: database
+        POSTGRES_HOST: database_host
         POSTGRES_DB: backend
         POSTGRES_USER: user
         POSTGRES_PASSWORD: passwd
@@ -36,4 +36,4 @@ services:
       POSTGRES_PASSWORD: passwd
       POSTGRES_DB: backend
       POSTGRES_PORT: database_port
-      POSTGRES_HOST: database
+      POSTGRES_HOST: database_host
