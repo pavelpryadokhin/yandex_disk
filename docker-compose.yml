@@ -9,7 +9,7 @@ services:
       dockerfile: Dockerfile
       args:
         DEBUG: False
-        PROJECT_NAME: "Backend School"
+        PROJECT_NAME: Backend School
         SERVER_NAME: Your Server Name
 
         POSTGRES_HOST: database_host
