@@ -1,0 +1,39 @@
+version: '3.9'
+services:
+  backend:
+    hostname: localhost
+    depends_on:
+      - database
+    build:
+      context: server
+      dockerfile: Dockerfile
+      args:
+        DEBUG: False
+        PROJECT_NAME: "Backend School"
+        SERVER_NAME: Your Server Name
+
+        POSTGRES_HOST: database
+        POSTGRES_DB: backend
+        POSTGRES_USER: user
+        POSTGRES_PASSWORD: passwd
+        POSTGRES_PORT: database_port
+    ports:
+      - "80:8081"
+    volumes:
+      - ./server:/server
+    privileged: true
+
+  database:
+    image: postgres:latest
+    restart: always
+    volumes:
+      - ./db/data:/var/lib/postgresql/data
+      - ./db/backups:/backups
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: passwd
+      POSTGRES_DB: backend
+      POSTGRES_PORT: database_port
+      POSTGRES_HOST: database
